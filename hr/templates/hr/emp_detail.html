@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>华大教育eHR系统</title>
+    <style type="text/css">
+        p.noem {color:red}
+        p.back {color:blue}
+        p.noem {font-size: 20px}
+        table.tb{font-size:14px}
+    </style>
+</head>
+<body>
+    <h1 align="center">华大教育eHR系统</h1>
+    <hr/>
+    <h3 align="center">{{ project_name }}员工信息表</h3>
+
+    {% if projects %}
+
+        {% if employee %}
+           <table border="1" align="center" class="tb">
+
+                    <tr>
+                        <td>姓名</td>
+                        <td>职位</td>
+                        <td>邮件</td>
+                        <td>工号</td>
+                        <td>校区</td>
+                        <td>电话</td>
+                        <td>薪资</td>
+                        <td>入职时间</td>
+                        <td>身份证号</td>
+                        <td>性别</td>
+                        <td>生日</td>
+                        <td>学位</td>
+                        <td>毕业院校</td>
+                        <td>专业</td>
+                    </tr>
+                {% for employee in employee %}
+                    <tr>
+                        <td>{{  employee.user_name }}</td>
+                        <td>{{  employee.get_user_position_display }}</td>
+                        <td>{{  employee.user_mail }}</td>
+                        <td>{{  employee.user_workcode }}</td>
+                        <td>{{  employee.user_school }}</td>
+                        <td>{{  employee.user_phonenumber }}</td>
+                        <td>{{  employee.user_salary }}</td>
+                        <td>{{  employee.user_arrivetime }}</td>
+                        <td>{{  employee.user_ID }}</td>
+                        <td>{{  employee.get_user_gender_display }}</td>
+                        <td>{{  employee.user_birthday }}</td>
+                        <td>{{  employee.get_user_diploma_display }}</td>
+                        <td>{{  employee.user_graduate_colledge }}</td>
+                        <td>{{  employee.user_major }}</td>
+                    </tr>
+
+                  <!-- <li> {{ employee.user_name }}</li> -->
+                {% endfor %}
+           </table>
+        {% else %}
+            <p align="center" class ="noem">没有员工信息</p>
+        {% endif %}
+    {% else %}
+        <p align="center" class="nosc">无{{ project_name }}的信息</p>
+    {% endif %}
+
+   <p align="center" class ="back"> <a href="/hr/" >返回</a> </p>
+
+</body>
+</html>

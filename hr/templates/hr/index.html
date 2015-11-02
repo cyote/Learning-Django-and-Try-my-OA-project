@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>华大教育eHR系统</title>
+</head>
+<body>
+<img src="{% static 'img/logo.png' %}" alt="logo", height="10%", width="10%"/>
+<h1 align="center">华大教育eHR系统</h1>
+    <hr/>
+
+    <p>校区</p>
+        {% if projects %}
+            <ul>
+                {% for project in projects %}
+                    <li>
+                        <a href="/hr/{{ project.id}}">
+                        {{ project.Proj_name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h1>没有可用的信息</h1>
+        {% endif %}
+
+<hr/>
+<h3>员工统计信息</h3>
+    <ul>
+        <li>员工总数：{{ emp_count }}</li>
+        <li>SD总数：{{ sd_c }}</li>
+        <li>ASD总数：{{ asd_c }}</li>
+        <li>DOS总数：{{ dos_c }}</li>
+        <li>CC总数：{{ cc_c }}</li>
+        <li>CR总数：{{ cr_c }}</li>
+        <li>TR总数：{{ tr_c }}</li>
+    </ul>
+
+
+
+</body>
+</html>
