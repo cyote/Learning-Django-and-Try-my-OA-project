@@ -26,8 +26,19 @@ class ProjectAdmin(admin.ModelAdmin):
 #class SupplierTypeAdmin(admin.ModelAdmin):
     #inlines = [SupplierInline]
 
-admin.site.register(Project)
-admin.site.register(DecorationContract)
-admin.site.register(Supplier)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('proj_code','Proj_name', 'adr_txt', 'sign_date', 'rent', 'landlord', )
+    list_filter = ('proj_code','Proj_name' )
+
+class DecorationContractAdmin(admin.ModelAdmin):
+    list_display =('school_name', 'proj_name', 'proj_type', 'supplier', 'sign_date', 'price')
+    list_filter =('school_name', 'proj_name', 'proj_type', 'supplier', 'sign_date', 'price')
+
+class SupplierAdmin(admin.ModelAdmin):
+    list_display = ('supplier_name', 'supplier_account', 'supplier_account_bank', 'supplier_Type')
+
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(DecorationContract, DecorationContractAdmin)
+admin.site.register(Supplier, SupplierAdmin)
 admin.site.register(SupplierType)
 

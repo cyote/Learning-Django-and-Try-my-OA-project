@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body></body>
+<img src="{% static 'img/logo.png' %}" alt="logo"/>
+<h1> 华大教育校区项目信息</h1>
+<hr/>
+{% if project_list %}
+    <ul>
+    {% for Project in project_list %}
+        <li>
+            <a href="/OA/{{ Project.id }}/">
+                {{ Project.Proj_name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No projects are available.</p>
+{% endif %}
+
+</body>

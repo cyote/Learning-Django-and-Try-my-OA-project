@@ -1,0 +1,103 @@
+<head>
+
+    <style type="text/css">
+        tr.tb {color:red}
+
+    </style>
+</head>
+
+<body>
+<h1 align="center">项目明细</h1>
+
+<hr/>
+<table border="1" align="center">
+    <tr class="tb">
+        <td>项目名称</td>
+        <td>项目地址</td>
+
+        <td>签约日期</td>
+
+        <td>租金</td>
+    </tr>
+
+    <tr>
+        <td>{{ project.Proj_name }}</td>
+        <td>{{ project.adr_txt }}</td>
+
+        <td>{{ project.sign_date }}</td>
+
+        <td>{{ project.rent }}</td>
+    </tr>
+
+    <tr class="tb">
+        <td>房东名称</td>
+        <td>房东账户</td>
+
+        <td>开户行</td>
+
+        <td>支付周期</td>
+        <td>{{ project.deposit }}</td>
+    </tr>
+
+
+    <tr>
+        <td>{{ project.landlord }}</td>
+        <td>{{ project.landlord_account }}</td>
+
+        <td>{{ project.landlord_account_bank }}</td>
+
+        <td>{{ project.payment_period }}</td>
+        <td>租赁保证金</td>
+    </tr>
+
+    <tr class="tb">
+
+        <td>首期支付金额</td>
+
+        <td>首期支付时间</td>
+        <td>二期支付金额</td>
+
+        <td>二支付时间</td>
+
+
+    </tr>
+
+
+    <tr>
+
+        <td>{{ project.sec_pay }}</td>
+
+        <td>{{ project.sec_pay_date }}</td>
+
+
+    <tr class="tb">
+
+        <td>三期支付金额</td>
+
+        <td>三期支付时间</td>
+        <td>四期支付金额</td>
+
+        <td>四期支付时间</td>
+
+
+    </tr>
+
+
+    <tr>
+
+        <td>{{ project.thd_pay }}</td>
+
+        <td>{{ project.thd_pay_date }}</td>
+
+        <td>{{ project.fou_pay }}</td>
+
+        <td>{{ project.fou_pay_date }}</td>
+
+
+
+    </tr>
+</table>
+
+<p align="center"><a href="/OA/">返回</a></p>
+
+</body>

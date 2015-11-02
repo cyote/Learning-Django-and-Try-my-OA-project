@@ -5,7 +5,7 @@ from models import Question,Choice
 
 # admin.site.register(Question)
 
-class ChoiceInline(admin.TabularInline):
+class ChoiceInline(admin.ModelAdmin):
     model = Choice
     extra = 3
 
